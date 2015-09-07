@@ -1,0 +1,84 @@
+<?php
+/**
+ * Template Name: Impact
+ *
+ * @package WordPress
+ * @subpackage WPized_Light
+ */
+
+get_header();
+the_post();
+the_field('custom_title');
+?>
+
+<?php
+get_template_part( 'partials/content' );
+get_template_part( 'partials/impact-table' );
+get_template_part( 'partials/additional-content' );
+get_template_part( 'partials/impact-fields' );
+?>
+
+<!-- impact-table -->
+    <div class="diagram-container diagram-horizontal">
+
+        <?php if (get_field('long_bar_header')) : ?>
+            <h2>
+                <?php the_field('long_bar_header') ?>
+            </h2>
+        <?php endif; ?>
+        <br>
+
+        <div class="inner-diagram" data-equalize=".inner-diagram-item .title">
+
+            <?php
+            if( have_rows('long_bar') ):
+                $counter = 0;
+                // loop through the rows of data
+                $field_object = get_field_object('long_bar');
+                $total_rows = count($field_object['value']);
+                while ( have_rows('long_bar') ) : the_row();
+                    ?>
+
+                    <div class="diagram-item <?php if ($counter == 0) ?>
+                        "
+                        >
+                        <div class="inner-diagram-item">
+                            <div class="info-container">
+                                <div class="details">
+                                    <h1 class="title">
+                                        <?php the_sub_field('title'); ?>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="image">
+                                <?php $img = get_sub_field('image');
+                                if( !empty($img) ) : ?>
+                                    <img
+                                        alt="<?php echo $img['title'] ?>"
+                                        src="<?php echo $img['url'] ?>"
+                                        >
+                                <?php endif; ?>
+                                <div class="vertical-border"></div>
+                                <div class="horizontal-border"></div>
+                            </div>
+                            <div class="info-container">
+                                <div class="details">
+                                    <div class="text">
+                                        <?php the_sub_field('content'); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <?php
+                    $counter++;
+                endwhile;
+            endif; ?>
+        </div>
+    </div>
+
+
+<?php
+get_sidebar();
+get_footer();
