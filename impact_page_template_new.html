@@ -21,15 +21,14 @@ get_template_part( 'partials/impact-fields' );
 <!-- impact-table -->
     <div class="diagram-container diagram-horizontal">
 
-        <?php if (get_field('long_bar_header')) : ?>
-            <h2>
-                <?php the_field('long_bar_header') ?>
-            </h2>
-        <?php endif; ?>
-        <br>
-
         <div class="inner-diagram" data-equalize=".inner-diagram-item .title">
-
+            <?php if (get_field('long_bar_header')) : ?>
+                <h2>
+                    <?php the_field('long_bar_header') ?>
+                </h2>
+            <?php endif; ?>
+        <br>
+        
             <?php
             if( have_rows('long_bar') ):
                 $counter = 0;
