@@ -1,0 +1,39 @@
+// Due to ridiculous amount of user control over the footer, it
+// has a dynamic height. Changes due to the sheer number of partners
+
+$dyn-footer_height: 215px
+#wrapper
+    margin-bottom: -$dyn-footer_height
+    padding: 0 0 $dyn-footer_height
+
+#footer
+    min-height: $dyn-footer_height
+
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max)
+    // ======== DESKTOP
+    $dyn-footer_height: 265px
+    #wrapper
+        margin-bottom: -$dyn-footer_height
+        padding: 0 0 $dyn-footer_height
+
+    #footer
+        min-height: $dyn-footer_height
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+    // ======== TABLET
+    $dyn-footer_height: 265px
+    #wrapper
+        margin-bottom: -$dyn-footer_height
+        padding: 0 0 $dyn-footer_height
+
+    #footer
+        min-height: $dyn-footer_height
+
+@media (max-width: $screen-xs-max)
+    // ======== MOBILE
+    $dyn-footer_height: 285px
+    #wrapper
+        margin-bottom: -$dyn-footer_height
+        padding: 0 0 $dyn-footer_height
+    #footer
+        min-height: $dyn-footer_height

@@ -1,0 +1,58 @@
+@mixin button($width, $theme: 'yellow')
+    +LatoBlack(12px)
+    display: inline-block
+    width: $width
+    text-align: center
+    border-radius: 4px
+    line-height: $button-height
+    text-transform: uppercase
+    border: 0
+
+    @if $theme == 'white'
+        background-color: $white
+        color: $mustard-yellow
+    @else
+        background-color: $mustard-yellow
+        color: $white
+
+@mixin input()
+    +LatoRegular(14px)
+    display: inline-block
+    width: 100%
+    //text-align: center
+    border-radius: 4px
+    height: $button-height  // required for Internet Explorer
+    line-height: $button-height
+    //text-transform: uppercase
+    border: 2px solid $shade-grey
+    padding: 0 $grid-gutter-width/2
+
+
+
+@mixin columnVerticalAlign()
+    // this mixin only works if every sibling block
+    // (columns of the same parent container) have
+    // this style applied
+    display: inline-block
+    vertical-align: middle
+    float: none
+
+@mixin resetContainer()
+    // self explanatory. Resets container styles
+    // example: .page-description on mobile (Think)
+    margin: 0
+    padding: 0
+
+@mixin fontSizeLineHeight($size, $height)
+    // Used primarily on responsive SASS files
+    // due to how fonts are changed according
+    // to layouts
+    font-size: $size
+    line-height: $height
+
+@mixin clip-path($clip)
+    -webkit-clip-path: $clip
+    -moz-clip-path: $clip
+    -ms-clip-path: $clip
+    clip-path: $clip
+

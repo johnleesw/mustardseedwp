@@ -1,0 +1,90 @@
+
+#navbar
+    overflow: hidden
+    border-bottom: 1px solid $light-grey
+    padding-bottom: 0
+    margin-bottom: $grid-gutter-width
+
+#navbar .container,
+#navbar .inner-container
+    border-bottom: 0
+
+#mobile-nav-menu
+    border-top: 1px solid $light-grey
+
+.form-fields .submit-button
+    float: right
+
+
+#navbar .inner-container
+    padding-bottom: $grid-gutter-width
+
+.clearfix:first-child
+    margin-bottom: $grid-gutter-width
+
+.join-container
+    margin-top: $gutter-and-half
+
+.three-columns-container .inner-column
+    padding: 0
+
+.inline-phrase
+    background-size: 5%
+    background-position: $grid-gutter-width top
+
+.inline-phrase .text h1
+    height: auto
+    display: block
+    margin-bottom: $half-gutter
+
+.page_header.orientation-left.colour-white
+    margin-bottom: $grid-gutter-width
+    //border-bottom: 1px solid $light-grey
+
+
+// ====================
+// ============== FONTS
+
+
+
+.colour-mustard-yellow .page-header-title
+    +fontSizeLineHeight(36px, 43px)
+
+.full-text .inner-title-container
+
+    h1, h2
+        +fontSizeLineHeight(34px, 48px)
+
+.join-block h1
+    +fontSizeLineHeight(30px, 36px)
+
+.colour-mustard-yellow .page-header-details p
+    +fontSizeLineHeight(28px, 33px)
+
+
+.left-bottom-footer a
+    +fontSizeLineHeight(19px, 30px)
+
+.event-item .date
+    +fontSizeLineHeight(40px, 48px)
+    font-weight: 400
+
+    img
+        display: block
+        max-width: 100%
+
+.past-events .date
+    +LatoLight(12px)
+    line-height: 14px
+
+.join-container .inner-join-container
+    .flexbox &
+        @include flex-wrap(wrap)
+        @include justify-content(center)
+        // @include flex-direction(column)
+
+    .join-block
+        width: 45%
+
+        &:nth-child(2n+1)
+            border-left: 0

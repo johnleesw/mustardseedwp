@@ -1,0 +1,52 @@
+// =============================================================
+// ========================= SKELETON
+
+#think
+    @extend .container
+    margin-bottom: $grid-gutter-width * 4
+
+.think-inner-container
+    @extend .row
+
+.thought-container
+    @extend .col-md-offset-1
+    @extend .col-md-10
+
+.inner-thought
+    +pie-clearfix
+
+.thought
+    @extend .row
+
+.thought .left-column
+    @extend .col-sm-5
+.thought .right-column
+    @extend .col-sm-7
+
+.think-navigation
+    @extend .col-md-offset-1
+    @extend .col-md-10
+    
+    
+
+// =============================================================
+// ========================= STYLE
+
+.inner-thought
+    margin-bottom: $gutter-and-half
+    border-bottom: 1px solid $light-grey
+    padding-bottom: $gutter-and-half
+
+    &:last-child
+        margin-bottom: $half-gutter
+
+
+.button
+    +button(110px)
+    
+.thought .text
+    margin-bottom: $grid-gutter-width * 2
+
+.think-navigation .inner-navigation
+    @extend .pull-right
+    

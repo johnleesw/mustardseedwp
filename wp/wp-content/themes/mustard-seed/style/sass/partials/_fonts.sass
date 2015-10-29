@@ -1,0 +1,500 @@
+// font-face fonts
+// see http://compass-style.org/docs/reference/compass/css3/font_face/
+
+@import "compass/css3/user-interface"
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900)
+
+
+@mixin LatoBlack($size)
+    font:
+        family:  'Lato'
+        weight: 900
+        style: normal
+        size: $size
+
+@mixin LatoBold($size)
+    font:
+        family:  'Lato'
+        weight: 700
+        style: normal
+        size: $size
+
+@mixin LatoRegular($size)
+    font:
+        family:  'Lato'
+        weight: 400
+        style: normal
+        size: $size
+
+@mixin LatoLight($size: $font-size-base)
+    font:
+        family:  'Lato'
+        weight: 300
+        style: normal
+        size: $size
+
+p
+    +LatoLight
+
+.filer_image_info .title,
+.filer_image_info .desc,
+    +LatoLight(12px)
+    line-height: 20px
+
+
+// =============================================================
+// ================== HEADER
+
+#nav-menu a
+    +LatoRegular(16px)
+    height: 40px
+    line-height: 40px
+    color: $font-color
+
+    &:focus,
+    &:active
+        text-decoration: none
+
+#nav-menu ul
+    li a
+        color: $grey
+        font-size: 12px
+
+    li.selected a
+        color: $font-color
+
+
+#mobile-nav-menu >li a
+    +LatoRegular(16px)
+    color: $grey
+
+#mobile-nav-menu #login-link
+    color: $font-color
+
+#mobile-nav-menu ul li a
+    +LatoRegular(12px)
+    line-height: 30px
+
+#mobile-nav-menu .selected > a
+    color: $font-color
+
+
+
+// =============================================================
+// ================== PAGE DESCRIPTION
+
+.page-description h1
+    +LatoRegular(40px)
+    line-height: 48px
+
+.full-page-description .page-description p
+    +LatoRegular(16px)
+    line-height: 20px
+    color: $font-color
+
+
+// =============================================================
+// ==================PAGE HEADER PLUGIN
+
+.colour-mustard-yellow
+
+    .page-header-title
+        +LatoBold(40px)
+        line-height: 48px
+
+    .page-header-details p
+        +LatoLight(24px)
+        line-height: initial
+        color: $font-color
+
+    &.orientation-top .page-header-title
+        font-size: 50px
+        line-height: 60px
+
+.colour-white
+
+    .page-header-title
+        +LatoRegular(40px)
+        line-height: 48px
+
+    .page-header-details p
+        +LatoLight(20px)
+        line-height: 24px
+        color: $font-color
+
+    &.orientation-top .page-header-title
+        font-size: 50px
+        line-height: 60px
+
+// =============================================================
+// ================== FULL TEXT WITH TITLE
+
+.full-text .inner-title-container
+
+    h1, h2
+        +LatoRegular(40px)
+        line-height: 48px
+
+    h1
+        color: $font-color //$mustard-yellow
+
+    p
+        font-size: $font-size-base
+        line-height: 20px
+
+    .plugin_link a
+        +LatoBold(12px)
+        line-height: 14px
+        text-transform: uppercase
+        color: $mustard-yellow
+
+.full-text .inner-text
+    font-family: "Lato"
+    font-weight: 300
+    font-style: normal
+    font-size: 16px
+
+    h1,
+    h2
+        +LatoLight(26px)
+        line-height: 30px
+    h2, a
+        color: $mustard-yellow
+
+    p
+        color: $font-color
+
+    .button
+        color: $white
+
+// =============================================================
+// ================== GLYPH POINTS
+
+.glyph-title
+    +LatoRegular(26px)
+    margin-bottom: 20px
+    line-height: 30px
+    color: $mustard-yellow
+
+.glyph-info h1  // same as .join-block h1
+    +LatoRegular(32px)
+    line-height: 36px
+
+
+.glyph-text p
+    +LatoLight(14px)
+    line-height: 18px
+
+// =============================================================
+// ================== GLYPH TABLE
+
+.glyph-table-title h1
+    +LatoRegular(32px)
+    line-height: 36px
+
+.no-bottom-margin
+    margin-bottom: 0
+
+.table-header
+    +LatoRegular(14px)
+    line-height: 16px
+    text-transform: uppercase
+    color: $shade-grey
+
+.table-col
+    h1
+        +LatoRegular(22px)
+        line-height: 30px
+    p
+        +LatoLight(14px)
+        line-height: 18px
+
+.table-col.col2 h1, p
+    color: $grey
+
+.table-col.col3
+    h1
+        color: $mustard-yellow
+    p
+        color: $font-color
+
+// =============================================================
+// ================== DIAGRAMS
+
+
+.diagram-container .inner-diagram > h1
+    text-align: center
+    +LatoRegular(32px)
+    line-height: 36px
+
+.diagram-container
+
+    .title
+        +LatoRegular(19px)
+        line-height: 21px
+
+    .text
+        +LatoLight(16px)
+        line-height: 20px
+
+    .child-row
+        +LatoLight(14px)
+        line-height: 18px
+        color: $grey
+
+    .diagram-item.special .title
+        +LatoRegular(26px)
+        line-height: 30px
+
+    .diagram-item.special .text
+        color: $grey
+
+.diagram-container.diagram-horizontal
+    .title
+        font-size: 18px
+        line-height: 24px
+
+    .text
+        font-size: 12px
+        line-height: 16px
+
+// =============================================================
+// ================== JOIN PLUGIN
+
+.join-block h1
+    +LatoRegular(32px)
+    line-height: 36px
+
+.join-description
+    +LatoRegular(14px)
+    line-height: 16px
+
+// =============================================================
+// ================== PEOPLE
+
+.three-columns-container .title
+    +LatoRegular(26px)
+    line-height: 30px
+
+.three-columns-container .container-toggle
+    +LatoRegular(40px)
+    line-height: 40px
+    color: $shade-grey
+
+.three-columns-container h1
+    +LatoRegular(18px)
+    line-height: 24px
+
+.three-columns-container h2
+    +LatoLight(14px)
+    line-height: 16px
+    color: $grey
+
+.three-columns-container p
+    +LatoLight(14px)
+    line-height: 18px
+    color: $font-color
+
+// =============================================================
+// ================== INLINE PHRASES
+
+.inline-phrase .text h1
+    +LatoRegular(34px)
+    line-height: 36px
+
+
+// =============================================================
+// ================== EVENTS
+
+.event-item
+    +LatoLight(16px)
+
+.event-item .date
+    +LatoRegular(40px)
+    line-height: 40px
+    color: $mustard-yellow
+    text-transform: uppercase
+
+    h4
+        margin-bottom: 15px
+
+    img
+        display: block
+
+.event-item h1
+    +LatoRegular(26px)
+    line-height: 30px
+
+.event-item p
+    +LatoLight(16px)
+    line-height: 18px
+    color: $font-color
+
+.event-title h1
+    +LatoRegular(26px)
+    line-height: 30px
+
+.event-item a
+    color: $mustard-yellow
+    &:hover
+        color: $mustard-yellow
+
+.event-item h2,
+.past-events .date
+    +LatoLight(16px)
+    line-height: 16px
+    color: $grey
+    text-align: left
+
+.past-events .date
+    line-height: 24px
+
+.past-events .event-item h1
+    +LatoRegular(18px)
+    line-height: 24px
+
+.caption.slideshow-caption p
+    +LatoLight(12px)
+    line-height: 20px
+
+
+// =============================================================
+// ================== PORTFOLIO
+
+.portfolio-details
+    h1
+        +LatoRegular(18px)
+        line-height: 24px
+    p
+        +LatoLight(16px)
+        line-height: 18px
+        color: $font-color
+
+.portfolio-item .to-detail
+    +LatoBold(12px)
+    line-height: 14px
+    color: $mustard-yellow
+    text-transform: uppercase
+
+    &:hover
+        color: $mustard-yellow
+
+.portfolio-item a,
+.portfolio-item a:hover,
+.portfolio-item a:active,
+.portfolio-item a:focus
+    h1, h2, h3, p
+        color: $font-color
+        text-decoration: none !important
+
+.portfolio-name h1, .portfolio-name h2
+    +LatoRegular(40px)
+    line-height: 48px
+
+.portfolio-name h2
+    color: $mustard-yellow
+
+.inner-portfolio-detail p
+    color: $font-color
+
+.portfolio-navigation a
+    color: $grey
+    &:hover
+        color: $grey
+
+.portfolio-previous
+    text-align: left
+.portfolio-list
+    text-align: center
+.portfolio-next
+    text-align: right
+
+.navigation-where-to
+    +LatoLight(11px)
+    line-height: 22px
+    text-transform: uppercase
+
+.navigation-portofolio-name
+    +LatoRegular(17px)
+    line-height: 20px
+
+.portfolio-list span
+    font-size: 20px
+    line-height: 20px
+
+
+
+
+// =============================================================
+// ================== THINK
+
+.thought h1
+    +LatoRegular(32px)
+    line-height: 36px
+    color: $mustard-yellow
+
+.thought time
+    +LatoLight(14px)
+    line-height: 16px
+    color: $grey
+
+.thought .button
+    background-color: $shade-grey !important
+    line-height: 30px !important
+
+    &:hover
+        color: white
+
+.think-navigation .inner-navigation
+    a, span
+        +LatoBold(12px)
+        line-height: 14px
+        text-transform: uppercase
+
+    a
+        color: $mustard-yellow
+    a:hover
+        color: $mustard-yellow
+
+    span
+        color: $font-color
+
+
+// =============================================================
+// ================== QUOTATION
+
+.quote-text
+    +LatoRegular(30px)
+    line-height: 36px
+
+.author
+    +LatoLight(12px)
+    line-height: 14px
+    color: $grey
+
+// =============================================================
+// ================== FOOTER
+
+.partners
+    text-transform: uppercase
+    +LatoBold(10px)
+    line-height: 50px
+    color: $white
+
+.left-bottom-footer a
+    +LatoRegular(14px)
+    line-height: 30px
+    color: $mustard-yellow
+
+    &:hover
+        color: $mustard-yellow
+
+.copyright p,
+.copyright a,
+    +LatoLight(12px)
+    line-height: 14px
+    color: $light-grey
+
+.copyright a:hover
+    color: $white
+    text-decoration: underline

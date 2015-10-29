@@ -1,0 +1,273 @@
+@import partials/mixins
+
+// standard modals have #myModal
+
+.form-container
+
+    height: 100%
+    //width: 100%
+    overflow-x: hidden
+    @media (max-width: $screen-md-min)
+        padding: 0 $grid-gutter-width/2
+        margin: 0
+
+
+.form
+    position: relative
+    color: $font-color
+    height: auto
+    background-color: $mustard-yellow
+
+    &--tiny
+        margin: 0
+        background: none
+
+
+#form-close-button
+    position: absolute
+    right: 15px
+    top: $grid-gutter-width/2
+    color: $shade-grey
+    font-size: 25px
+    cursor: pointer
+    z-index: 2
+    opacity: 1
+
+    .form--tiny &
+        right: 0
+
+.form-info
+    //padding-left: $grid-gutter-width
+    //background-color: $mustard-yellow
+    height: 100%
+    display: block
+
+
+    >.form-info-content
+        padding-top: $grid-gutter-width * 3
+        padding-left: $grid-gutter-width
+        height: 100%
+        background-color: $mustard-yellow
+        p
+            color: $font-color
+            +LatoLight(16px)
+
+        .addresses
+            padding-top: $grid-gutter-width * 2
+            display: block
+        .addresses, .addresses a, .addresses *
+            color: white !important
+            font-size: 14px
+            max-width: 100%
+        .social
+            padding-top: $grid-gutter-width
+
+.form-fields-container
+    background-color: white
+    height: 100%
+    padding-left: $grid-gutter-width / 2
+
+    .form--tiny &
+        padding: 0 $grid-gutter-width / 2
+        margin: 0
+        width: 100% !important
+        height: auto
+
+$form_font_size: 14px
+.form-fields
+    background-color: white
+
+    h1
+        padding-top: $grid-gutter-width * 3
+        padding-bottom: $grid-gutter-width
+
+        .form--tiny &
+            padding-top: $grid-gutter-width
+
+    form
+        font-size: $form_font_size
+
+    p
+        position: relative
+        font-size: $form_font_size
+
+    b
+        display: inline-block
+        padding-bottom: 5px
+
+    .hiddeninput
+        display: none
+
+    .required-symbol
+        position: absolute
+        right: 20px
+        top: 36px
+        color: $mustard-yellow
+
+    .help-field .required-symbol
+        //due to help text space, has an extra line
+        // and an extra top value
+        top: 53px
+
+    .help-field label
+        margin-bottom: 0
+
+    .help-hover
+        margin-left: 4px
+        width: $half-gutter
+        white-space: nowrap
+
+
+    //============= OBSOLETE
+
+    .help-text
+        //visibility: hidden
+        visibility: visible
+        opacity: 0.9
+        z-index: 100
+        +LatoRegular(14px)
+        line-height: 20px
+        padding-left: $half-gutter
+        padding-bottom: $half-gutter / 2
+
+    .help-hover:hover .help-text
+        visibility: visible
+
+    //======================
+
+    span
+        font-weight: 400
+        padding-bottom: 5px
+
+    label
+        display: block
+
+    input:not([type="checkbox"]),
+        width: 100%
+        +input
+        font-size: $form_font_size
+
+    textarea
+        +input
+        //height: auto
+        height: $textarea-height
+        line-height: 20px
+
+    .button-primary
+        +button(100%)
+        +transition(background-color .2s ease-in)
+        border: 0 !important
+
+    .submit-button
+        input
+            +button(100%)
+            +transition(background-color .2s ease-in)
+
+        input.in-progress
+            background-color: $shade-grey
+            &:hover
+                cursor: default
+
+.clear
+    clear: both
+
+.error
+    border: 2px solid $red !important
+
+#errors
+    margin-bottom: $grid-gutter-width
+    p
+        width: 100%
+        background-color: $red
+        color: white
+        line-height: $button-height
+        //+LatoRegular(14px)r
+        font-size: $form_font_size
+        span
+            padding-right: $grid-gutter-width / 2
+
+input[type="submit"]
+    cursor: pointer
+
+.modal-content
+    border-radius: 0
+
+#login-modal
+
+    .modal-dialog
+        width: auto
+
+    .modal-content
+
+        display: inline-block
+        background-color: transparent
+        +box-shadow(none)
+        border: 0
+        margin-top: 10%
+
+    .modal-body
+        background-color: white
+        padding: 0
+
+    #form-close-button
+        font-size: 15px
+        top: $grid-gutter-width / 2
+        right: $grid-gutter-width
+        width: 0
+        height: 0
+        z-index: 2
+
+    .form
+        background-color: white
+
+
+    .form-fields-container
+        width: 100%
+        background-color: white
+        padding-left: $grid-gutter-width
+        padding-right: $grid-gutter-width
+
+    .form-fields
+        width: 100%
+        padding-bottom: $grid-gutter-width * 2
+        padding-left: 0
+        padding-right: 0
+        h1
+            padding-top: $grid-gutter-width * 2
+
+        p
+            width: 100%
+        .submit-button
+            width: 100%
+
+    #errors
+        display: none
+        +pie-clearfix
+        padding: 0
+
+    #extra-info-container
+        clear: both
+        background-color: $mustard-yellow
+        padding-left: $grid-gutter-width
+        padding-right: $grid-gutter-width
+        color: $black
+        p
+            color: $black
+
+    #extra-info
+        clear: both
+
+        padding-top: $grid-gutter-width
+        padding-bottom: $grid-gutter-width
+        #buttons
+            text-align: center
+        a.learn-more
+            //+button(139px, 'white')
+            +button(49%, 'white')
+            &:first-of-type
+                border-top-right-radius: 0
+                border-bottom-right-radius: 0
+                margin-right: 1px
+            &:last-of-type
+                border-top-left-radius: 0
+                border-bottom-left-radius: 0

@@ -1,0 +1,33 @@
+// I gather this file is a starting point for the project.
+@import "compass/utilities"
+@import "compass/css3/transition"
+@import "compass/css3/user-interface"
+@import "compass/css3/flexbox"
+@import "compass/utilities/general/clearfix"
+@import partials/base
+@import partials/fonts
+@import partials/variables
+@import partials/animate
+@import partials/mixins
+@import bootstrap
+@import bootstrap/glyphicons
+@import partials/skeleton
+@import partials/forms
+@import partials/diagram-borders
+@import partials/chosen
+@import partials/search
+
+@import partials/style
+@import partials/modal
+@import partials/portfolio
+@import partials/news
+@import partials/login
+
+@import partials/shame
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+    // ======== TABLET
+    @import partials/tablet
+
+@media (max-width: $screen-xs-max)
+    @import partials/mobile

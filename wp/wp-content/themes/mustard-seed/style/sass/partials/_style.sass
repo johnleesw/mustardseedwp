@@ -1,0 +1,753 @@
+
+html, body
+    height: 100%
+
+#wrapper
+    min-height: 100%
+    height: auto
+    overflow: hidden
+
+h1, h2, h3, h4, h5, h6
+    margin: 0
+    padding: 0
+
+a:hover
+    text-decoration: none
+
+p:last-of-type
+    margin-bottom: 0 !important
+
+// Mobile Firefox hack to disable gradient
+button
+    background-image: none
+
+#navbar
+    padding: $grid-gutter-width 0
+
+    .container
+        border-bottom: 1px solid $light-grey
+
+    .inner-container
+        padding-bottom: $gutter-and-half
+
+#logo img
+    max-width: 100%
+
+#nav-menu
+    margin-top: $half-gutter
+    height: $menu-height
+    position: relative
+
+    li
+        display: inline-block
+        margin-right: $grid-gutter-width / 2
+        vertical-align: top
+
+    .selected ul,
+    .current-menu-item ul,
+    .current-menu-ancestor ul,
+        display: block
+
+    ul
+        display: none
+        position: absolute
+        top: ($menu-height / 2) + 2
+        list-style-type: none
+        padding: 0
+
+    > li:hover:not(.selected),
+    > .selected,
+    .current-menu-item,
+    .current-menu-ancestor
+        border-bottom: 2px solid $font-color
+
+    #login-link
+        float: right
+
+
+.menu-toggle
+    height: $inner-menu-height
+    padding-top: ($inner-menu-height / 2) - ($menu-toggle-height / 2)
+    text-align: right
+
+.menu-toggle a
+    display: inline-block
+    width: $menu-toggle-width
+    height: $menu-toggle-height
+    background: image-url("menu-toggle.png") no-repeat 0px 0px
+
+    &.active
+        background: image-url("menu-toggle.png") no-repeat 0px -22px
+
+
+
+
+#mobile-nav-menu
+    > li, > #login-link
+        border-bottom: 1px solid $light-grey
+        min-height: $menu-item-spacing
+        line-height: $menu-item-spacing
+
+        ul
+            display: none
+            list-style-type: none
+
+    li.selected ul,
+    li.current-menu-item ul,
+    li.current-menu-ancestor ul
+        display: block
+        +pie-clearfix
+
+    a
+        display: block
+        list-style-type: none
+    li
+        list-style-type: none
+
+.mobile-menu-container
+    display: none
+
+.page-description .inner-description
+    padding-bottom: $half-gutter
+    margin-bottom: $gutter-and-half
+    border-bottom: 4px solid $light-grey
+
+.full-page-description .page-description .inner-description
+    margin-bottom: $gutter-and-half
+
+    .desc
+        margin-bottom: $grid-gutter-width
+
+
+.separator
+    +clearfix
+    +pie-clearfix
+    display: block
+    clear: both
+    //width: 100%
+    height: 1px
+    background-color: $light-grey
+
+.filer_image
+    display: inline-block
+    max-width: 100%
+
+    img
+        max-width: 100%
+
+#container
+    .filer_image
+        margin-bottom: $gutter-and-half
+
+    .filer_image_info
+        display: block
+        width: 100%
+        height: $gutter-and-half
+
+    .filer_image_info
+        padding-top: $half-gutter
+        text-align: center
+
+// =============================================================
+// ================== BUTTON
+
+.inner-container > .button
+    +button($default-button-width)
+    display: block
+
+    &.place-center
+        margin: (($grid-gutter-width * 3) + $half-gutter) auto (($grid-gutter-width * 3)) auto
+
+    &:hover
+        color: $white
+
+
+
+// =============================================================
+// ==================PAGE HEADER PLUGIN
+
+.page_header
+    background-color: $mustard-yellow
+
+    .inner-page-header
+        height: $page-header-height
+
+
+.page_header
+    margin-top: -$grid-gutter-width
+    margin-bottom: $grid-gutter-width * 4
+    clear: both
+
+    p
+        margin-bottom: $grid-gutter-width
+    img
+        max-width: 100%
+
+.page_header.orientation-left
+
+    .page-header-details
+        margin-bottom: $half-gutter
+
+    .page-header-image
+        text-align: right
+
+    .page-header-image,
+    .details
+        display: inline-block
+        float: left
+        height: 100%
+
+    .image-container,
+    .inner-details
+        display: table
+        height: 100%
+        width: 100%
+
+    .image-container-cell,
+    .inner-details-cell
+        display: table-cell
+        vertical-align: middle
+
+.page_header.orientation-top
+    text-align: center
+
+    .image-container-cell
+        width: 100%
+
+    .inner-page-header
+        padding-top: $grid-gutter-width * 3
+        padding-bottom: $grid-gutter-width * 3
+
+    .page-header-details
+        margin-bottom: $grid-gutter-width
+
+    .page-header-image,
+    .details
+        text-align: center
+        height: auto
+
+.page_header.colour-white
+    background-color: $white
+
+    .button
+        +button($button-width, 'yellow')
+
+.page_header.colour-mustard-yellow
+    background-color: $mustard-yellow
+
+    .button
+        +button($button-width, 'white')
+
+.inner-page-header .page-header-image
+    +animate(fadeIn, 0.4s, 0.5s, ease, $mode: both)
+.inner-page-header .details
+    +animate(fadeIn, 0.4s, 0.9s, ease, $mode: both)
+.inner-page-header .button
+    +animate(fadeIn, 0.4s, 1.4s, ease, $mode: both)
+
+
+// =============================================================
+// ================== FULL TEXT WITH TITLE PLUGIN
+
+.clearfix:first-child
+    // due to margin collapsing, this bottom margin will intersect with the
+    // first full-text plugin margin of the page. It only seems to happen on "About Us"
+    // source: http://www.w3.org/TR/CSS21/box.html#collapsing-margins
+    margin-bottom: $grid-gutter-width * 3
+
+.full-text
+    margin-bottom: $grid-gutter-width * 3
+    padding-bottom: $grid-gutter-width * 4  // last paragraphs dont have margins
+    border-bottom: 1px solid $light-grey
+
+    &.no-border
+        padding-bottom: 0  // last paragraphs dont have margins
+        border-bottom: 0
+
+
+    .image
+        text-align: center
+
+    .about-us-image
+        margin-left: -30%
+
+    .inner-title-container h1
+        padding-bottom: $half-gutter
+
+    .inner-title-container h2
+        margin-bottom: 25px
+        padding-top: $half-gutter
+        background: image-url('subtitle-bg-bar.png') no-repeat left top
+
+    p
+        margin-bottom: $grid-gutter-width
+
+    .plugin_link
+        display: block
+
+    .inner-text
+        margin-top: 15px
+
+    .inner-text h1,
+    .inner-text h2
+        margin-bottom: $half-gutter
+
+    .button
+        margin-top: ($grid-gutter-width * 2) + $half-gutter
+        +button($membership-button-width, 'yellow')
+
+    &.vertical-align
+        .flexbox &
+            @include display-flex
+            @include flex-direction(column)
+            @include align-items(center)
+
+            @media (min-width: $screen-sm-min)
+                @include flex-direction(row)
+
+                .inner-text
+                    margin-top: 0
+
+// =============================================================
+// ================== GLYPH POINTS
+
+.glyph-container
+    margin-top: $grid-gutter-width
+
+.glyph-info
+    margin-bottom: $gutter-and-half + $grid-gutter-width
+
+    h1
+        margin-bottom: $half-gutter
+
+.glyph-point-container
+    margin-bottom: $grid-gutter-width
+
+.glyph-image img
+    display: block
+    margin: $half-gutter auto
+    max-width: 100%
+
+// =============================================================
+// ================== GLYPH TABLE
+
+.glyph-table-title
+    margin-bottom: $gutter-and-half
+    padding-left: 0
+
+.table-row.table-header
+    padding-bottom: $half-gutter
+    border-bottom: 4px solid $light-grey
+    margin-bottom: $grid-gutter-width
+
+.table-row
+    padding-bottom: $grid-gutter-width
+    border-bottom: 1px solid $light-grey
+    margin-bottom: $grid-gutter-width
+
+    &:last-child
+        border-bottom: 0
+        padding: 0
+        margin-bottom: $grid-gutter-width  * 3
+
+.table-header .table-col.col2
+    //padding-left: 0
+
+.table-col h1
+    margin-bottom: $half-gutter
+
+.glyph-table img
+    max-width: 100%
+
+// =============================================================
+// ================== DIAGRAMS
+
+
+.diagram-container.diagram-vertical
+    background-color: $lighter-grey
+    padding-top: $grid-gutter-width * 2
+    padding-bottom: $grid-gutter-width * 2
+
+    .inner-diagram-item
+        position: relative
+
+    .inner-diagram > h1
+        margin-bottom: $grid-gutter-width
+
+    .button
+        +button(100%, 'yellow')
+
+    .image
+        text-align: center
+    .image img
+        max-width: 100%
+        position: relative
+        z-index: 100
+
+    .diagram-item
+        margin-bottom: $gutter-and-half
+
+    .children
+        overflow: hidden
+        position: relative
+        z-index: 100
+
+    .child-row
+        padding: $half-gutter
+        background-color: $light-grey
+        border-radius: 4px
+        margin-bottom: $half-gutter
+        position: relative
+        z-index: 100
+
+        &:first-child
+            margin-top: $half-gutter
+
+    a, .image, button
+        position: relative
+        z-index: 100
+
+
+.diagram-container.diagram-horizontal
+    text-align: center
+    margin-bottom: 100px
+
+    .children
+        display: none
+
+    .inner-diagram
+        border-top: 1px solid $light-grey
+        padding-top: $grid-gutter-width * 2
+        padding-bottom: $grid-gutter-width * 2
+        border-bottom: 1px solid $light-grey
+
+        background-color: $lighter-grey
+
+    .image,
+    .title
+        margin-bottom: $half-gutter
+
+    .image, img
+        text-align: center
+        position: relative
+        z-index: 100
+
+// =============================================================
+// ================== JOIN PLUGIN
+
+.join-container
+    background-color: $lighter-grey
+    margin-top: $gutter-and-half + $grid-gutter-width
+
+.join-container .inner-join-container
+    .flexbox &
+        @include display-flex
+        @include flex-direction(row)
+
+
+.join-container .inner-join-container .join-block
+    width: 33.3%
+    border-left: 1px solid $white
+    text-align: center
+    padding-top: $grid-gutter-width * 2
+    padding-bottom: $grid-gutter-width * 2
+
+    &:first-child
+        border-left: 0
+
+    h1
+        margin-bottom: $half-gutter
+
+    .button
+        +button($button-width, 'yellow')
+
+    .flexbox &
+        @include display-flex
+        @include align-items(center)
+        @include flex-direction(column)
+
+.join-glyph-image
+    margin-bottom: $half-gutter
+
+
+.join-description
+    margin-bottom: $grid-gutter-width
+
+    .flexbox &
+        @include flex(1)
+
+
+// =============================================================
+// ================== THREE COLUMNS CONTAINER
+
+.three-columns-container
+    border-top: 1px solid $light-grey
+    background-color: $lighter-grey
+    padding-top: $grid-gutter-width * 2
+    padding-bottom: $grid-gutter-width * 2
+
+.three-columns-container
+    text-align: center
+
+    .title,
+    .image
+        margin-bottom: $grid-gutter-width
+
+    .column
+        padding-top: $grid-gutter-width * 2
+
+    .title
+        margin-bottom: -#{$grid-gutter-width}
+
+    img
+        border-radius: 50%
+
+    .title-container
+        margin-bottom: $half-gutter
+
+
+// =============================================================
+// ================== THREE COLUMNS CONTAINER
+
+.inline-phrase
+    height: $inline-phrase-height
+    background: image-url("email.png") no-repeat $grid-gutter-width center
+    border-top: 1px solid $lighter-grey
+
+.inline-phrase .text h1
+    height: $inline-phrase-height
+    display: table-cell
+    vertical-align: middle
+
+.inner-inline-phrase .button-container .button
+    +button(100%, 'yellow')
+
+
+
+// =============================================================
+// ================== EVENTS
+
+.event-container
+    +clearfix
+    padding-bottom: $grid-gutter-width
+    border-bottom: 1px solid $light-grey
+    margin-bottom: $grid-gutter-width
+
+.event-item
+    h1
+        margin-bottom: $grid-gutter-width * 0.75
+    //h2
+    //    //margin-bottom: $half-gutter
+
+    .date
+
+        .crop
+            height: 175px
+            width: 175px
+            overflow: hidden
+
+        img
+            display: block
+            height: auto
+            margin: 0 auto
+
+        time + img
+            margin-top: 15px
+
+    .logo, .info
+        display: table-cell
+    .info
+        vertical-align: top
+    .logo
+        vertical-align: middle
+        padding-right: $grid-gutter-width / 2
+        img
+            display: inline
+
+    &.vertical-align
+        .flexbox &
+            @include display-flex
+            @include flex-direction(column)
+            @include align-items(center)
+
+            @media (min-width: $screen-md-min)
+                @include flex-direction(row)
+
+
+.events-container
+    border-top: 1px solid $light-grey
+    background-color: $lighter-grey
+    padding-top: $grid-gutter-width * 2
+
+
+.event-title h1
+    padding-bottom: $half-gutter
+    border-bottom: 4px solid $light-grey
+    margin-bottom: $grid-gutter-width
+
+.past-events .inner-events .event-item:last-child .inner-event-item .event-container
+    border: 0
+    margin-bottom: $grid-gutter-width * 2
+
+.past-events
+    padding-bottom: 40px
+
+.past-events .button
+    display: block
+    width: 150px
+    margin: 0 auto
+
+    &:hover
+        color: $white
+
+
+// =============================================================
+// ================== GALLERY
+
+.gallery-container
+    +pie-clearfix
+
+.gallery-plugin
+    display: none
+    margin-top: $grid-gutter-width * 2
+    margin-bottom: $grid-gutter-width * 3
+
+.gallery-plugin,
+.gallery-inner-container
+    height: $gallery-height
+
+.gallery-inner-container
+    max-width: $gallery-max-width
+
+.gallery-slideshow,
+.caption.slideshow-caption
+    background-color: $light-grey
+
+.gallery-slideshow
+    height: $gallery-height - ($grid-gutter-width * 2)
+
+.caption.slideshow-caption
+    display: block
+    height: ($grid-gutter-width * 2)
+    padding-top: $half-gutter
+    padding-left: $half-gutter
+
+.slide
+    max-width: 100%
+    overflow: hidden
+
+.navigation
+    width: 100%
+
+.navigation #prev,
+.navigation #next
+    position: absolute
+    bottom: $gallery-height / 2
+    width: 22px
+    height: 40px
+    // background-color: red
+
+.navigation #prev
+    left: -$gutter-and-half
+    background: image-url("slide-previous.png") no-repeat center center
+.navigation #next
+    background: image-url("slide-next.png") no-repeat center center
+    right: -$gutter-and-half
+
+
+// =============================================================
+// ================== VIDEO & SNIPPET PLUGIN
+
+.video-plugin,
+.snippet-plugin
+    margin-bottom: $grid-gutter-width * 3
+    height: $gallery-height
+    display: block
+
+.snippet-plugin
+    height: auto
+
+    iframe
+        display: block
+        margin: 0 auto
+
+.snippet-inner-container
+    overflow: hidden
+
+// =============================================================
+// ================== QUOTE PLUGIN (currently under Portfolio)
+
+.quote .inner-quote
+    border-left: 3px solid $font-color
+    padding-left: $half-gutter
+    margin-bottom: $grid-gutter-width * 2
+
+.quote-text
+    margin-bottom: $half-gutter / 2
+
+.logos
+    text-align: justify
+
+    &:after
+        content: ""
+        width: 100%
+        display: inline-block
+
+    img
+        display: inline-block
+
+// =============================================================
+// ================== FOOTER
+
+#footer
+    background-color: $footer-grey
+
+#footer .container
+    min-height: $footer-height
+
+.top-footer
+    margin-top: $gutter-and-half
+    padding-bottom: $gutter-and-half
+    border-bottom: 1px solid $grey
+
+    *
+        display: inline-block
+        color: white
+        font-size: 10px
+        font-weight: bold
+
+    img
+        margin-left: $grid-gutter-width
+
+.bottom-footer
+    margin-top: $grid-gutter-width
+    margin-bottom: $grid-gutter-width
+    +pie-clearfix
+
+.footer-brand,
+.left-bottom-footer,
+.right-bottom-footer
+    display: inline-block
+
+
+.footer-brand
+    display: inline-block
+    float: left
+    margin: 0 18px
+
+.left-bottom-footer
+    float: left
+    height: $gutter-and-half
+    background: image-url("footer-contact-top-border.png") no-repeat top left
+
+.right-bottom-footer
+    float: right
+    display: inline-block
+    vertical-align: top
+
+
+.copyright
+    float: left
+    clear: left
+    text-align: left
+    margin-top: $grid-gutter-width

@@ -1,0 +1,289 @@
+$page-header-image-max-height: 300px
+$portfolio-image-height: 220px
+
+#navbar
+    overflow: hidden
+
+
+#navbar .inner-container
+    padding-bottom: $grid-gutter-width
+    border-bottom: 2px solid $light-grey
+
+#logo img
+    max-height: $inner-menu-height
+
+.inner-container > .button,
+.inner-container > .button.place-center
+    width: 100%
+    width: calc(100% - 20px)  // $grid-gutter-width
+    margin-left: $half-gutter
+    margin-right: $half-gutter
+
+.page_header
+    height: auto  // due to Our Mission
+    margin-left: 0
+    margin-right: 0
+    margin-bottom: $grid-gutter-width * 2
+
+    .inner-page-header
+        padding-top: $grid-gutter-width * 2
+        padding-bottom: $grid-gutter-width * 2
+        height: auto
+
+    &.colour-white
+        border: 1px solid $light-grey
+
+.page_header.orientation-left img
+    width: auto
+    max-width: 100%
+
+.page_header.orientation-left, .page_header.orientation-top
+    .page-header-image,
+    .details
+        height: auto
+
+
+.page-header-image img
+    max-height: $page-header-image-max-height
+
+.image-container,
+.page_header .details
+    width: 100%
+    text-align: center
+
+.page-description .desc
+    display: none
+
+.clearfix
+    display: none
+
+.clearfix:first-child
+    margin-bottom: $grid-gutter-width
+    display: block
+
+.full-text
+    margin-bottom: $grid-gutter-width * 2
+    padding-bottom: $grid-gutter-width * 2
+
+    .inner-text,
+    .inner-title-container
+        padding: 0
+
+    .inner-text h2
+        text-align: center
+
+    .button
+        width: 100%
+        margin-top: $grid-gutter-width
+
+
+.column .inner-column
+    padding: 0 $grid-gutter-width $grid-gutter-width $grid-gutter-width
+
+.three-columns-container
+    .title
+        display: none
+
+    .title.mobile
+        float: none
+        text-align: left
+
+    .container-toggle
+        float: right
+        margin-top: -5px
+
+    .container-toggle.toggle-close
+        display: none
+
+.three-columns-inner-container
+    display: none
+
+
+.video-plugin
+    height: auto
+
+    iframe
+        +make-xs-column(12)
+        height: 250px
+
+.inline-phrase
+    background-size: 8%
+
+.inner-inline-phrase
+    margin-top: ($inline-phrase-height / 2) - ($button-height / 2)
+    .text
+        display: none
+
+.glyph-table-container
+    margin-left: 0
+    margin-right: 0
+
+.glyph-table-inner-container
+    +make-row
+
+.table-header
+    margin-left: 0
+    margin-right: 0
+
+.glyph-table-title,
+.glyph-table
+    padding-left: $half-gutter
+
+.glyph-info,
+.glyph-point-container
+    +make-row
+
+.glyph-point-container
+    height: auto
+
+.glyph-info
+    margin-bottom: $grid-gutter-width
+
+.join-container
+    margin-left: 0
+    margin-right: 0
+
+.join-container .inner-join-container
+    .flexbox &
+        @include flex-wrap(wrap)
+        @include justify-content(center)
+        @include flex-direction(column)
+
+    .join-block
+        width: 100%
+        border-left: 0
+        border-top: 1px solid $white
+
+.table-col.col1
+    position: absolute
+    left: 0
+    top: 0
+
+.table-row:last-child
+    margin-bottom: $grid-gutter-width
+
+.table-col.col2,
+.table-col.col3
+    padding-bottom: $half-gutter
+
+
+// === THINK
+
+
+.left-column
+    margin-bottom: $half-gutter
+
+.thought .text,
+.inner-thought
+    margin-bottom: $grid-gutter-width
+
+.inner-thought
+    padding-bottom: $grid-gutter-width
+
+// === EVENTS
+
+.events-container
+    margin-left: 0
+    margin-right: 0
+
+.event-item .date
+    text-align: left
+
+.events-container
+    padding-top: $grid-gutter-width
+
+.past-events .inner-events .event-item:last-child .inner-event-item .event-container
+    margin-bottom: 0
+
+// === DIAGRAMS
+
+.diagram-container.diagram-vertical
+    border-top: 1px solid $light-grey
+
+.diagram-container.diagram-horizontal .diagram-item
+    +clearfix
+    text-align: left
+    margin-bottom: $grid-gutter-width
+    font-size: 0
+
+    .image,
+    .info-container
+        +columnVerticalAlign
+        // float: left
+    .image img
+        max-width: 100%
+
+    .title
+        margin: 0
+
+// .diagram-container.diagram-vertical .diagram-item .image
+//     // ends up being a bit silly
+//     vertical-align: top
+
+.horizontal-border
+    border-bottom: 0
+    border-right: 2px solid $mustard-yellow
+
+// === PORTFOLIO
+
+.navigation-where-to,
+.navigation-portofolio-name
+    display: none
+
+.portfolio-previous,
+.portfolio-list
+    border-right: 2px solid $white
+
+.portfolio-previous a
+    background: image-url("slide-previous-dark.png") no-repeat center left
+.portfolio-next a
+    background: image-url("slide-next-dark.png") no-repeat center right
+
+.portfolio-item .image
+    height: 200px
+.portfolio-item .image img
+    position: relative
+    max-height: 180px
+
+.footer-brand,
+.left-bottom-footer,
+.right-bottom-footer
+    margin-bottom: $grid-gutter-width
+
+
+
+.gallery-plugin
+    +make-xs-column(10)
+    +make-xs-column-offset(1)
+
+// ====================
+// ============== FONTS
+
+
+
+.colour-mustard-yellow .page-header-title
+    +fontSizeLineHeight(34px, 40px)
+
+.full-text .inner-title-container
+
+    h1, h2
+        +fontSizeLineHeight(34px, 48px)
+
+.join-block h1
+    +fontSizeLineHeight(30px, 36px)
+
+.colour-mustard-yellow .page-header-details p
+    +fontSizeLineHeight(28px, 33px)
+
+
+.left-bottom-footer a
+    +fontSizeLineHeight(19px, 30px)
+
+.event-item .date
+    +fontSizeLineHeight(40px, 48px)
+    margin-bottom: 15px
+    font-weight: 400
+
+.past-events .date
+    +LatoLight(12px)
+    line-height: 14px

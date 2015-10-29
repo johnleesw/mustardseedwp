@@ -1,0 +1,139 @@
+$portfolio-thumb-container-height: 220px
+// $portfolio-thumb-container-width: 235px
+// $portfolio-thumb-container-height: auto
+$portfolio-thumb-container-width: 100%
+
+$portfolio-item-height: 320px
+@import "compass/css3/background-size"
+
+#portfolio-list
+    margin-bottom: $grid-gutter-width * 2
+
+.portfolio-row
+    .flickity-prev-next-button.previous
+        left: -40px
+
+    .flickity-prev-next-button.next
+        right: -40px
+
+.slider-item
+    width: 25.1%
+
+.portfolio-item
+    overflow: hidden
+    margin-bottom: $grid-gutter-width * 2
+
+    @media (min-width: $screen-sm-min)
+        &:nth-child(3n+1)
+            clear: both
+
+    @media (min-width: $screen-md-min)
+        height: auto
+        display: block
+
+        &:nth-child(3n+1)
+            clear: none
+
+        &:nth-child(4n+1)
+            clear: both
+
+    .image-container
+        display: table
+        width: $portfolio-thumb-container-width
+        //background-color: $light-grey
+        margin-bottom: $half-gutter
+        border: 4px solid $light-grey
+
+    .image
+        display: table-cell
+        vertical-align: middle
+        width: $portfolio-thumb-container-width
+        height: $portfolio-image-height
+        @media (min-width: $screen-lg-min)  // and (max-width: $screen-sm-max)
+            height: $portfolio-image-height + 10
+
+
+        @media (max-width: $screen-xs-max)  // and (max-width: $screen-sm-max)
+            padding: $half-gutter
+
+        margin-bottom: $grid-gutter-width
+        max-height: $portfolio-thumb-container-height
+        text-align: center
+        position: relative
+
+    .image img
+        max-width: $portfolio-thumb-container-width
+        max-height: $portfolio-image-height
+
+    h1, p
+        margin-bottom: $half-gutter
+
+
+.portfolio-item .to-detail
+    display: block
+    width: 100%
+    height: $grid-gutter-width
+    background-color: $white
+    bottom: 0
+    margin-top: $grid-gutter-width / 2
+
+//==================== DETAILS
+
+
+.portfolio-header
+    +pie-clearfix
+
+.portfolio-main-image
+    margin-top: -$grid-gutter-width
+    height: $portfolio-main-image-height
+    +background-size(cover)
+    background-position: center
+
+.portfolio-name
+    // portfolio-name gets the margin due to the
+    // main-image being optional. It has to have
+    // a good spacing to the menu
+    margin-top: $grid-gutter-width * 3
+    margin-bottom: $gutter-and-half
+
+    h1
+        margin-bottom: $half-gutter
+
+    h2
+        padding-top: $half-gutter
+        background: image-url('subtitle-bg-bar.png') no-repeat left top
+
+.inner-portfolio-detail .text
+    margin-bottom: $grid-gutter-width * 3
+
+    @media (max-width: $screen-sm-min - 1)
+        margin-bottom: $gutter-and-half
+
+.inner-portfolio-detail .filer_image
+    margin-bottom: $gutter-and-half
+
+.inner-portfolio-detail .filer_image_info
+    padding-top: $half-gutter
+
+.inner-portfolio-detail .gallery-plugin,
+.inner-portfolio-detail .video-plugin
+    float: left
+
+.inner-portfolio-detail .gallery-inner-container,
+.inner-portfolio-detail .video-inner-container
+    padding: 0
+
+.portfolio-navigation
+    background-color: $light-grey
+    a
+        display: block
+        padding-top: $gutter-and-half
+        height: 100%
+
+    .portfolio-previous,
+    .portfolio-list,
+    .portfolio-next
+        height: $portfolio-navigation-height
+
+.portfolio-list span
+    padding-top: 5px

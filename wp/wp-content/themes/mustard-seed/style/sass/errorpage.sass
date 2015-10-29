@@ -1,0 +1,115 @@
+@import partials/base
+@import partials/variables
+@import bootstrap
+
+$gutter-and-half: $grid-gutter-width / 2
+
+html, body
+    overflow: hidden
+
+html, body, #container, .inner-container
+    height: 100%
+    min-height: 100%
+    background-color: $mustard-yellow
+
+
+#navbar
+    @extend .navbar-fixed-top
+    padding: $grid-gutter-width 0
+    height: 140px
+    background-color: $white
+
+#navbar .container .inner-container
+    @extend .row
+    padding-bottom: $gutter-and-half
+
+#navbar .container
+    border-bottom: 0
+
+#container
+    margin-top: 70px  // half the size of the navigation bar
+
+.inner-container
+    @extend .container
+    background-color: transparent
+    float: none !important
+
+.errno-container,
+    @extend .col-md-offset-1
+    @extend .col-lg-offset-1
+    @extend .col-xs-12
+    @extend .col-sm-4
+    @extend .col-md-4
+    @extend .col-lg-4
+
+
+.text-container
+    @extend .col-sm-8
+    @extend .col-md-7
+    @extend .col-lg-7
+
+    @extend .hidden-xs
+
+
+.errno-container .text
+    @extend .visible-xs
+
+.errno-container,
+.text-container
+    display: table
+    height: 100%
+
+.error-num,
+.text
+    display: table-cell
+    vertical-align: middle
+
+.modal-dialog
+    width: 100%
+.form
+    overflow: hidden
+// ==============================================
+
+.error-num
+    text-align: right
+    font-size: 130px
+    line-height: 130px
+
+.text
+    h1
+        font-size: 40px
+        line-height: 48px
+
+    p
+        font-size: 24px
+        line-height: 34px
+    a
+        color: white
+        font-size: 24px
+        line-height: 34px
+        text-transform: none
+        width: auto
+        font-weight: 400
+
+    a:hover
+        color: white
+        text-decoration: underline
+
+
+@media (max-width: $screen-md-min)
+    // ======== TABLET AND MOBILE
+
+    .inner-container
+        width: 100%
+
+    .error-num
+        text-align: left
+
+    .text h1
+        font-size: 30px
+        line-height: 32px
+
+    .text p, .text a
+        font-size: 18px
+        line-height: 22px
+        font-weight: 400

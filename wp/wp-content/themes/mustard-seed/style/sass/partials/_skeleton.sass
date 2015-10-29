@@ -1,0 +1,540 @@
+.row-double-margin
+    //needed for page_header plugin
+    @extend .row
+    margin-left: -$grid-gutter-width
+    margin-right: -$grid-gutter-width
+
+// =====================================================================
+
+.page-description .inner-description .description,
+.glyph-table-container,
+.diagram-container,
+.events-container,
+.join-container,
+#portfolio-detail,
+.page_header
+    //@extend .row-double-margin
+
+.clearfix
+    @extend .container
+
+.mobile-check
+    // tied to the way the diagram
+    // renders its transversal lines
+    @extend .hidden-sm
+    @extend .hidden-md
+    @extend .hidden-lg
+
+.mobile
+    @extend .visible-xs-block
+
+#logo
+    @extend .col-md-2
+    @extend .col-xs-6
+
+#navbar .menu-toggle
+    @extend .hidden-md
+    @extend .hidden-lg
+    @extend .col-xs-6
+
+.mobile-menu-container
+    @extend .row
+
+#mobile-nav-menu
+    @extend .col-xs-12
+
+
+
+.mobile-menu-container li, .mobile-menu-container #login-link
+    @extend .col-xs-12
+
+#nav-menu
+    @extend .col-md-10
+    @extend .hidden-xs
+    @extend .hidden-sm
+
+
+
+#navbar .container .inner-container
+    @extend .row
+
+
+#container .inner-container
+    //@extend .col-md-12
+    @extend .row
+
+
+#footer .container
+    .inner-container
+        @extend .row
+
+.page-description
+    @extend .container
+    margin-top: $half-gutter
+
+    .description
+        @extend .row-double-margin
+
+    .title
+        @extend .col-md-3
+
+    .desc
+        @extend .col-md-7
+
+.think-page .inner-description,
+.page-description .inner-description
+    @extend .col-md-offset-1
+    @extend .col-md-10
+
+.full-page-description .page-description .inner-description
+    float: none
+    width: 100%
+    margin: 0
+
+    .title
+        @extend .col-md-3
+
+    .desc
+        @extend .col-md-6
+
+.page_header
+
+    .inner-page-header
+        @extend .container
+
+    &.orientation-left
+        .page-header-image,
+            @extend .col-md-offset-1
+            @extend .col-md-4
+            @extend .col-sm-5
+            @extend .col-xs-12
+
+        .details
+            @extend .col-sm-7
+            @extend .col-xs-12
+
+    &.orientation-top
+        .page-header-image,
+        .details
+            @extend .col-md-offset-2
+            @extend .col-md-8
+            @extend .col-xs-12
+
+.full-text
+    +pie-clearfix
+    @extend .container
+    .inner-title-container
+        @extend .col-md-offset-1
+        @extend .col-md-4
+        @extend .col-sm-5
+        @extend .col-xs-12
+
+    .inner-text
+        @extend .col-md-6
+        @extend .col-sm-7
+
+    .inner-title-container,
+    .inner-text
+        +columnVerticalAlign
+
+    .inner-title-container
+        vertical-align: top
+
+
+
+.glyph-container
+    +pie-clearfix
+    //@extend .row
+    @extend .container
+
+
+    .glyph-info
+        @extend .col-md-offset-1
+        @extend .col-md-6
+
+    .glyph-point-container.glyph-odd
+        @extend .col-md-offset-1
+
+    .glyph-point-container:nth-child(2n+2)
+        clear: both
+
+    .glyph-point-container
+        @extend .col-md-5
+        @extend .col-sm-6
+
+    .glyph-inner-container
+        @extend .row
+
+    .glyph-image
+        @extend .col-md-2
+        @extend .col-xs-2
+
+    .details
+        @extend .col-md-10
+        @extend .col-xs-10
+
+.separator
+    @extend .container
+
+
+.glyph-table-container
+    +pie-clearfix
+
+.glyph-table-inner-container
+    @extend .container
+
+.glyph-table-title,
+.glyph-table
+    @extend .col-md-offset-1
+    @extend .col-md-10
+
+.table-row
+    @extend .row
+    position: relative
+    font-size: 0
+
+.table-col.col1
+    @extend .col-sm-1
+    @extend .col-xs-2
+
+    +columnVerticalAlign
+    vertical-align: middle
+
+.table-col.col2
+    @extend .col-sm-5
+    @extend .col-xs-10
+    @extend .col-sm-offset-0
+    @extend .col-xs-offset-2
+
+    +columnVerticalAlign
+    vertical-align: middle
+
+.table-col.col3
+    @extend .col-sm-5
+    @extend .col-xs-10
+    @extend .col-sm-offset-0
+    @extend .col-xs-offset-2
+
+    +columnVerticalAlign
+    vertical-align: top
+
+.table-header
+    font-size: 14px
+
+.table-header .table-col.col1,
+.table-header .table-col.col2,
+.table-header .table-col.col3
+    @extend .hidden-xs
+
+.table-header .table-col.col1
+    @extend .col-sm-1
+
+.table-header .table-col.col2
+    @extend .col-sm-5
+
+
+.diagram-container
+    +pie-clearfix
+
+.diagram-container .inner-diagram
+    @extend .container
+    position: relative  // to handle a vertical border that connects glyphs
+
+
+.diagram-container.diagram-vertical .diagram-item
+    @extend .col-sm-offset-2
+    @extend .col-sm-8
+    @extend .col-md-offset-3
+    @extend .col-md-6
+    font-size: 0
+
+    .image
+        @extend .col-xs-2
+        +columnVerticalAlign
+    .info-container
+        @extend .col-xs-10
+        +columnVerticalAlign
+
+
+.diagram-container.diagram-horizontal .diagram-item
+    @extend .col-sm-3
+
+    .image
+        @extend .col-xs-2
+        @extend .col-sm-12
+    .info-container
+        @extend .col-xs-10
+        @extend .col-sm-12
+
+
+.join-container
+    +pie-clearfix
+
+    .inner-join-container
+        @extend .container
+
+    .join-block
+        @extend .col-md-5
+        @extend .col-sm-6
+
+
+.three-columns-container
+    @extend .container
+
+    .column-row
+        +pie-clearfix
+        text-align: center
+        margin-bottom: $grid-gutter-width
+
+    .column
+        @extend .col-sm-4
+        display: inline-block
+        float: none
+        // inline-block fix
+        margin-right: -4px
+        vertical-align: top
+    .inner-column
+        padding: 0 ($grid-gutter-width * 2)
+
+    .title.mobile
+        @extend .col-xs-12
+
+
+    &.children-1 .column
+        @extend .col-sm-offset-4
+        clear: left
+
+    &.children-2 .column:first-of-type
+        @extend .col-sm-offset-2
+
+.inline-phrase
+    @extend .container
+
+.inner-inline-phrase
+    @extend .row
+
+.inner-inline-phrase .text
+    @extend .col-md-8
+    @extend .col-md-offset-0
+    @extend .col-sm-11
+    @extend .col-sm-offset-1
+
+.inner-inline-phrase .button-container
+    @extend .col-md-3
+    @extend .col-sm-4
+    @extend .col-xs-7
+
+    @extend .col-md-offset-0
+    @extend .col-sm-offset-1
+    @extend .col-xs-offset-2
+
+.inline-phrase .text,
+.inline-phrase .button-container
+    +columnVerticalAlign
+
+.inner-inline-phrase div:first-child
+    @extend .col-md-offset-1
+
+.events-container
+    // only shows on past events
+
+.events
+    @extend .container
+
+.inner-events
+    @extend .col-md-offset-1
+    @extend .col-md-10
+    @extend .col-sm-12
+
+.inner-event-row
+    @extend .row
+
+.inner-event-item
+    @extend .col-md-12
+
+.event-item
+    @extend .row
+
+    .date
+        @extend .col-xs-12
+        @extend .col-sm-3
+
+    .details-container
+        @extend .col-xs-12
+        @extend .col-sm-9
+
+    .details-inner-container
+        @extend .row
+
+    h1, .event-header, .description
+        @extend .col-xs-12
+
+
+    .logo
+        // can't use @media in other places
+        @media (max-width: $screen-sm-min)
+            width: 100%
+            clear: both
+            display: block !important
+            margin-bottom: $grid-gutter-width / 2
+    .event-header
+        @media (max-width: $screen-sm-min)
+            margin-bottom: $grid-gutter-width / 2
+
+.video-plugin,
+.snippet-plugin
+    @extend .container
+    @extend .col-xs-10
+    @extend .col-xs-offset-1
+
+.gallery-plugin
+    @extend .container
+
+.gallery-inner-container,
+.video-inner-container,
+.snippet-inner-container
+    @extend .col-md-offset-2
+    @extend .col-md-8
+
+#portfolio-list
+    @extend .container
+
+.inner-portfolio-list,
+.inner-tablet-portfolio-list
+    @extend .row
+
+.inner-portfolio-list
+    @extend .hidden-sm
+
+.inner-tablet-portfolio-list
+    @extend .visible-sm
+
+.portfolio-row
+    +pie-clearfix
+
+.portfolio-row-inner
+    width: 100%
+
+.portfolio-item
+    @extend .col-xs-12
+    @extend .col-sm-4
+    @extend .col-md-3
+
+.portfolio-name,
+.inner-portfolio-detail,
+.inner-portfolio-navigation
+    @extend .container
+
+.portfolio-name h1,
+.portfolio-name h2,
+.inner-portfolio-detail .text,
+.inner-portfolio-detail .filer_image
+    @extend .col-md-offset-2
+    @extend .col-md-8
+
+.inner-portfolio-detail .quote
+    @extend .col-md-offset-1
+    @extend .col-md-10
+
+.portfolio-previous
+    @extend .col-md-5
+    @extend .col-xs-4
+.portfolio-list
+    @extend .col-md-2
+    @extend .col-xs-4
+.portfolio-next
+    @extend .col-md-5
+    @extend .col-xs-4
+
+#footer .inner-container
+    float: none
+    padding: 0
+    width: auto
+    @extend .row
+
+.top-footer,
+.bottom-footer
+    @extend .col-md-12
+
+
+
+
+
+
+
+
+
+// ==================================
+// ============ FORMS
+
+.form
+    @extend .row
+
+.form-info
+    @extend .hidden-xs
+    @extend .hidden-sm
+    @extend .col-md-3
+
+.form-fields-container
+    @extend .col-xs-12
+    @extend .col-md-9
+
+.form-fields-row
+    @extend .row
+
+.form-fields
+    @extend .col-xs-12
+    @extend .col-md-11
+
+.form-fields form
+    @extend .row
+
+.form-fields p
+    @extend .col-xs-12
+    @extend .col-sm-6
+
+    &:nth-of-type(2n+1)
+        clear: both
+
+.form-fields p.textarea
+    @extend .col-xs-12
+
+.form-fields .submit-button
+    @extend .col-md-offset-3
+    @extend .col-sm-6
+
+.form-fields .wpcf7-response-output
+    clear: both
+    padding: 20px
+    text-align: center
+
+.form-fields .wpcf7-validation-errors
+    color: red
+
+.form-fields .wpcf7-mail-sent-ok
+    color: green
+
+.form-fields .screen-reader-response
+    display: none
+
+.form-fields .wpcf7-not-valid-tip
+    color: red
+
+#errors
+    @extend .col-md-12
+
+#login-modal
+    @extend .container
+
+#login-modal .modal-dialog
+    @extend .row
+
+#login-modal .modal-content
+    @extend .col-sm-offset-3
+    @extend .col-md-offset-4
+    @extend .col-xs-12
+    @extend .col-sm-6
+    @extend .col-md-4
+
+#login-modal .form-fields .submit-button
+    @extend .col-md-offset-0

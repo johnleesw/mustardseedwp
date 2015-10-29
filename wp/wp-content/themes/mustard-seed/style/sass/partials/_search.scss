@@ -1,0 +1,72 @@
+
+// Search
+//------------------------------------------------------------------------------
+
+.search-form {
+    max-width: 600px;
+    width: 100%;
+
+    input[type="text"] {
+        float: left;
+        width: 83.333%;
+        margin: 0;
+        padding: 8px 20px;
+        border: 2px solid #000;
+        font-size: 18px;
+        line-height: normal;
+
+        @include input-placeholder {
+            color: $gray;
+        }
+
+        @media (max-width: $screen-sm-min) {
+            width: 75%;
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+    }
+
+    button {
+        float: left;
+        width: 16.667%;
+        margin: 0;
+        padding: 8px 20px;
+        background: $mustard-yellow;
+        border: 2px solid #000;
+        border-left: 0;
+        color: #fff;
+        font-size: 18px;
+        line-height: normal;
+
+        @media (max-width: $screen-sm-min) {
+            width: 25%;
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+    }
+
+    &-cols {
+        @include clearfix;
+        clear: both;
+        margin: 0 -40px;
+
+        @media (max-width: $screen-sm-min) {
+            margin: 0 -10px;
+        }
+    }
+
+    &-col {
+        float: left;
+        width: 50%;
+        padding: 0 40px;
+        margin-top: 15px;
+
+        &:nth-child(2n+1) {
+            clear: both;
+        }
+
+        @media (max-width: $screen-sm-min) {
+            padding: 0 10px;
+        }
+    }
+}
